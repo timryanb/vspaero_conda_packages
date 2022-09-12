@@ -19,6 +19,6 @@ make package
 pushd _CPack_Packages/${OS}/ZIP/OpenVSP-${PKG_VERSION}-${OS}/python
 pip install -r requirements.txt
 pushd ..
-cp openvsp vspaero vspscript vspslicer ${PREFIX}/bin
+cp vsp vspaero vspscript vspslicer ${PREFIX}/bin
 popd
 popd
