@@ -43,7 +43,11 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/lib/libadept.a
+    - test -f $PREFIX/bin/vsp
+    - test -f $PREFIX/bin/vspaero
+
+  imports:
+    - openvsp
 
 about:
   home: http://openvsp.org/
