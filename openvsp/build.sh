@@ -16,7 +16,7 @@ cmake ../src/ -DVSP_LIBRARY_PATH=../buildlibs -DCMAKE_BUILD_TYPE=Release
 make -j ${CPU_COUNT}
 make package
 # Install python interface
-pushd _CPack_Packages/${OS}/ZIP/OpenVSP-${version}-${OS}/python
+pushd _CPack_Packages/${OS}/ZIP/OpenVSP-${PKG_VERSION}-${OS}/python
 pip install -r requirements.txt
 pushd ..
 cp openvsp vspaero vspscript vspslicer ${PREFIX}/bin
