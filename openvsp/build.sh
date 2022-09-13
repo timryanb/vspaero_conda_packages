@@ -19,11 +19,7 @@ make -j ${CPU_COUNT} VERBOSE=1
 make package
 # Install python interface
 pushd _CPack_Packages/${OS}/ZIP/OpenVSP-${PKG_VERSION}-${OS}/python
-#${PIP} install --no-deps --prefix=${PREFIX} -r requirements.txt -vv
-${PIP} install --no-deps --prefix=${PREFIX} utilities/. -vv
-${PIP} install --no-deps --prefix=${PREFIX} degen_geom/. -vv
-${PIP} install --no-deps --prefix=${PREFIX} openvsp/. -vv
-${PIP} install --no-deps --prefix=${PREFIX} CHARM/. -vv
+${PYTHON} -m pip install --no-deps --prefix=${PREFIX} -r requirements.txt -vv
 pushd ..
 cp vspaero vspscript vsploads ${PREFIX}/bin
 if [[ !$(no_graphics) ]]; then
