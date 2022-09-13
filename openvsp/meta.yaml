@@ -26,6 +26,7 @@ build:
 
 requirements:
   build:
+    - python {{ python }}
     - cmake
     - make
     - {{ compiler('cxx') }}  # Cf comment above
@@ -39,6 +40,7 @@ requirements:
     - openmp
     - setuptools
   host:
+    - python {{ python }}
     - swig
     - eigen
     - cminpack
@@ -49,6 +51,7 @@ requirements:
     - openmp
     - setuptools
   run:
+    - python
     - numpy
     - matplotlib
     - scipy
