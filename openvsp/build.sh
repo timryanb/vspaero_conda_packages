@@ -19,7 +19,7 @@ make -j ${CPU_COUNT} VERBOSE=1
 make package
 # Install python interface
 pushd _CPack_Packages/${OS}/ZIP/OpenVSP-${PKG_VERSION}-${OS}/python
-${PIP} install -r requirements.txt;
+${PIP} install --no-deps --prefix=${PREFIX} -r requirements.txt;
 pushd ..
 cp vspaero vspscript vsploads ${PREFIX}/bin
 if [[ !$(no_graphics) ]]; then
