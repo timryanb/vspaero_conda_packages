@@ -11,7 +11,7 @@
 
 package:
   name: {{ name|lower }}
-  version: {{ environ.get('GIT_DESCRIBE_TAG') }}
+  version: {{ version }}
 
 source:
   git_url: https://github.com/OpenVSP/OpenVSP.git
