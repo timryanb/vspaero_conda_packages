@@ -21,9 +21,7 @@ make package
 pushd _CPack_Packages/${OS}/ZIP/OpenVSP-${PKG_VERSION}-${OS}/python
 ${PYTHON} -m pip install --no-deps --prefix=${PREFIX} -r requirements.txt -vv
 pushd ..
-cp vspaero vspscript vsploads ${PREFIX}/bin
+cp -v vspaero vspscript vsploads ${PREFIX}/bin
 if [[ !$(no_graphics) ]]; then
-  cp vsp ${PREFIX}/bin
+  cp -v vsp ${PREFIX}/bin
 fi
-popd
-popd
