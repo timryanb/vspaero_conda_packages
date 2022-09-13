@@ -41,6 +41,7 @@ requirements:
     - setuptools
   host:
     - python {{ python }}
+    - pip
     - swig
     - eigen
     - cminpack
