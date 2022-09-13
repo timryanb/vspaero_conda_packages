@@ -37,6 +37,7 @@ requirements:
     - glm
     - glew
     - openmp
+    - setuptools
   host:
     - swig
     - eigen
@@ -46,6 +47,7 @@ requirements:
     - glm
     - glew
     - openmp
+    - setuptools
   run:
     - numpy
     - matplotlib
