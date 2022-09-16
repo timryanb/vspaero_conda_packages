@@ -20,7 +20,7 @@ make package
 # Install python interface
 pushd _CPack_Packages/${OS}/ZIP/OpenVSP-${PKG_VERSION}-${OS}/python
 ${PYTHON} -m pip install --no-deps --prefix=${PREFIX} -r requirements.txt -vv
-pushd ..
+cd ..
 cp -v vspaero vspscript vsploads ${PREFIX}/bin
 if [[ !$(no_graphics) ]]; then
   cp -v vsp ${PREFIX}/bin
