@@ -6,6 +6,7 @@ elif [[ "$target_platform" == linux-* ]]; then
   export OS="Linux"
 fi
 
+echo ${PREFIX}
 mkdir build buildlibs
 cd buildlibs
 cmake -DVSP_NO_GRAPHICS=${no_graphics} -DVSP_USE_SYSTEM_LIBXML2=true -DVSP_USE_SYSTEM_FLTK=true \
@@ -22,6 +23,7 @@ pushd _CPack_Packages/${OS}/ZIP/OpenVSP-${PKG_VERSION}-${OS}/python
 ${PYTHON} -m pip install --no-deps --prefix=${PREFIX} -r requirements.txt -vv
 cd ..
 cp -v vspaero vspscript vsploads ${PREFIX}/bin
-if [[ !$(no_graphics) ]]; then
-  cp -v vsp ${PREFIX}/bin
-fi
+#if [[ !$(no_graphics) ]]; then
+#  cp -v vsp ${PREFIX}/bin
+#fi
+echo ${PREFIX}
