@@ -67,5 +67,7 @@ jobs:
           conda config --set anaconda_upload no;
           cd ${VSP_DIR};
           conda mambabuild --no-include-recipe -c conda-forge --output-folder . .;
-          #anaconda upload --label main ${{ matrix.BUILD_DIR }}/*with_graphics*.tar.bz2 --force;
+          if [[ ${{ matrix.OS }} == "macos-latest" ]]; then
+            anaconda upload --label main ${{ matrix.BUILD_DIR }}/*with_graphics*.tar.bz2 --force;
+          fi;
           anaconda upload --label no_graphics ${{ matrix.BUILD_DIR }}/*no_graphics*.tar.bz2 --force;
