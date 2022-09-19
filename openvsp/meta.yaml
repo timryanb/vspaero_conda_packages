@@ -71,8 +71,8 @@ test:
     - test -f $PREFIX/bin/vsp
     - test -f $PREFIX/bin/vspaero
 
-  imports:
-    - openvsp
+  #imports:
+  #  - openvsp
 
 about:
   home: http://openvsp.org/
