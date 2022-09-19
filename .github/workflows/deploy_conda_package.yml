@@ -63,8 +63,9 @@ jobs:
           echo "VSP_DIR=${GITHUB_WORKSPACE}/openvsp" >> $GITHUB_ENV;
           export ANACONDA_API_TOKEN=${{ secrets.ANACONDA_TOKEN }};
           conda install anaconda-client conda-build conda-verify -q -y;
+          conda install -c conda-forge boa -q -y;
           conda config --set anaconda_upload no;
           cd ${VSP_DIR};
-          conda build --no-include-recipe -c conda-forge --output-folder . .;
+          conda mambabuild --no-include-recipe -c conda-forge --output-folder . .;
           #anaconda upload --label main ${{ matrix.BUILD_DIR }}/*with_graphics*.tar.bz2 --force;
           anaconda upload --label no_graphics ${{ matrix.BUILD_DIR }}/*no_graphics*.tar.bz2 --force;
