@@ -68,11 +68,11 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/bin/vsp
+    - test -f $PREFIX/bin/vsp  # [no_graphics == "false"]
     - test -f $PREFIX/bin/vspaero
 
-  #imports:
-  #  - openvsp
+  imports:
+    - openvsp
 
 about:
   home: http://openvsp.org/
