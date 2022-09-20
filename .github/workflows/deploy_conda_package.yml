@@ -27,11 +27,11 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          # real versions
+          # linux versions
           - OS: ubuntu-latest
             BUILD_DIR: linux-64
 
-          # complex versions
+          # macos versions
           - OS: macos-latest
             BUILD_DIR: osx-64
 
@@ -56,6 +56,12 @@ jobs:
         with:
           auto-update-conda: true
           python-version: 3.8
+          
+      # Github's Ubuntu runner doesn't come with OpenGL libraries by default
+      - name: Install OpenGL (Ubuntu)
+        if: contains(matrix.OS, 'ubuntu')
+        run: |
+          sudo apt-get install libgl-dev -q -y;
 
       - name: Build OpenVSP package
         run: |
@@ -67,7 +73,5 @@ jobs:
           conda config --set anaconda_upload no;
           cd ${VSP_DIR};
           conda mambabuild --no-include-recipe -c conda-forge --output-folder . .;
-          if [[ ${{ matrix.OS }} == "macos-latest" ]]; then
-            anaconda upload --label main ${{ matrix.BUILD_DIR }}/*with_graphics*.tar.bz2 --force;
-          fi;
+          anaconda upload --label main ${{ matrix.BUILD_DIR }}/*with_graphics*.tar.bz2 --force;
           anaconda upload --label no_graphics ${{ matrix.BUILD_DIR }}/*no_graphics*.tar.bz2 --force;
