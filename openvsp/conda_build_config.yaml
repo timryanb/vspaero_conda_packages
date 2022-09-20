@@ -1,6 +1,6 @@
 no_graphics:
-  - true
   - false # [osx]
+  - true
 
 python:
   - 3.7
