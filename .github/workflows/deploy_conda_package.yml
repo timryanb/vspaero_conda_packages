@@ -60,10 +60,7 @@ jobs:
       # Github's Ubuntu runner doesn't come with OpenGL libraries by default
       - name: Install OpenGL (Ubuntu)
         if: contains(matrix.OS, 'ubuntu')
-        run: |
-          sudo apt-get install mesa-common-dev libgl1-mesa-dev libglu1-mesa-dev -y;
-          ls /usr/lib/x86_64-linux-gnu/;
-          #sudo ln -s /usr/lib/x86_64-linux-gnu/libGL.so.1 /usr/lib/x86_64-linux-gnu/libGL.so;
+        uses: openrndr/setup-opengl@v1.1
 
       - name: Build OpenVSP package
         run: |
