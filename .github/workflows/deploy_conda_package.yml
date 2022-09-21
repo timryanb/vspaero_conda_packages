@@ -56,11 +56,6 @@ jobs:
         with:
           auto-update-conda: true
           python-version: 3.8
-          
-      # Github's Ubuntu runner doesn't come with OpenGL libraries by default
-      - name: Install OpenGL (Ubuntu)
-        if: contains(matrix.OS, 'ubuntu')
-        uses: openrndr/setup-opengl@v1.1
 
       - name: Build OpenVSP package
         run: |
@@ -72,5 +67,8 @@ jobs:
           conda config --set anaconda_upload no;
           cd ${VSP_DIR};
           conda mambabuild --no-include-recipe -c conda-forge --output-folder . .;
-          anaconda upload --label main ${{ matrix.BUILD_DIR }}/*with_graphics*.tar.bz2 --force;
+          # Graphics build doesn't work on ubuntu because Github CI doesn't have OpenGL library
+          if [[ ${{ matrix.OS }} == "macos-latest" ]]; then
+            anaconda upload --label main ${{ matrix.BUILD_DIR }}/*with_graphics*.tar.bz2 --force;
+          fi;
           anaconda upload --label no_graphics ${{ matrix.BUILD_DIR }}/*no_graphics*.tar.bz2 --force;
