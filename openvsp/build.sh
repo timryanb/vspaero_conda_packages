@@ -28,5 +28,8 @@ ln -s ${PREFIX}/bin/vsploads ${SP_DIR}/openvsp/
 if [[ $(no_graphics) == "false" ]]; then
   cp -v vsp vspviewer ${PREFIX}/bin
   ln -s ${PREFIX}/bin/vspviewer ${SP_DIR}/openvsp/
+else
+  # Create dummy file to prevent warning message
+  touch ${SP_DIR}/openvsp/vspviewer
 fi
 echo ${PREFIX}
