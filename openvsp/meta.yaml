@@ -1,5 +1,5 @@
 {% set name = "openvsp" %}
-{% set version = "3.31.0" %}
+{% set version = "3.31.1" %}
 
 {% if no_graphics == "true" %}
 {% set build = 100 %}
