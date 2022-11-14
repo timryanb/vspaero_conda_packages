@@ -37,7 +37,7 @@ requirements:
     - fltk
     - glm
     - glew
-    - openmp
+    - llvm-openmp # [osx]
     - libgomp # [linux64]
     - setuptools
   host:
@@ -50,7 +50,7 @@ requirements:
     - fltk
     - glm
     - glew
-    - openmp
+    - llvm-openmp # [osx]
     - libgomp # [linux64]
     - setuptools
   run:
@@ -66,7 +66,7 @@ requirements:
     - fltk
     - glm
     - glew
-    - openmp
+    - llvm-openmp # [osx]
     - libgomp # [linux64]
 
 test:
