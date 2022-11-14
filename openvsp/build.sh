@@ -6,7 +6,6 @@ elif [[ "$target_platform" == linux-* ]]; then
   export OS="Linux"
 fi
 
-echo ${PREFIX}
 mkdir build buildlibs
 cd buildlibs
 cmake -DVSP_NO_GRAPHICS=${no_graphics} -DVSP_USE_SYSTEM_LIBXML2=true -DVSP_USE_SYSTEM_FLTK=true \
@@ -25,7 +24,7 @@ cd ..
 cp -v vspaero vspscript vsploads ${PREFIX}/bin
 ln -s ${PREFIX}/bin/vspaero ${SP_DIR}/openvsp/
 ln -s ${PREFIX}/bin/vsploads ${SP_DIR}/openvsp/
-if [[ $(no_graphics) == "false" ]]; then
+if [[ ${no_graphics} == "false" ]]; then
   cp -v vsp vspviewer ${PREFIX}/bin
   ln -s ${PREFIX}/bin/vspviewer ${SP_DIR}/openvsp/
 else
