@@ -27,7 +27,7 @@ build:
 requirements:
   build:
     - python {{ python }}
-    - cmake
+    - cmake =3.29
     - make
     - {{ compiler('cxx') }}  # Cf comment above
     - swig
