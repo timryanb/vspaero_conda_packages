@@ -15,7 +15,7 @@ cmake -DVSP_NO_GRAPHICS=${no_graphics} -DVSP_USE_SYSTEM_LIBXML2=true -DVSP_USE_S
 make -j1
 cd ../build
 cmake ../src/ -DVSP_NO_GRAPHICS=${no_graphics} -DVSP_LIBRARY_PATH=../buildlibs -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="${CXX_FLAGS} -std=c++11"
-make -j ${CPU_COUNT}
+make -j ${CPU_COUNT} VERBOSE=1
 make package
 # Install python interface
 pushd _CPack_Packages/${OS}/ZIP/OpenVSP-${PKG_VERSION}-${OS}/python
