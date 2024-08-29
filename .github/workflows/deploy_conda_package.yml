@@ -56,6 +56,7 @@ jobs:
         with:
           auto-update-conda: true
           python-version: 3.8
+          miniconda-version: "latest"
 
       - name: Build OpenVSP package
         run: |
