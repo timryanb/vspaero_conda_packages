@@ -29,7 +29,7 @@ requirements:
     - python {{ python }}
     - cmake
     - make
-    - {{ compiler('cxx') }}  # Cf comment above
+    - compilers ==1.6.0
     - swig
     - eigen
     - cminpack
