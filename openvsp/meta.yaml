@@ -40,6 +40,8 @@ requirements:
     - llvm-openmp # [osx]
     - libgomp # [linux64]
     - setuptools
+    -wxPython
+    -vtk
   host:
     - python {{ python }}
     - pip
@@ -53,6 +55,8 @@ requirements:
     - llvm-openmp # [osx]
     - libgomp # [linux64]
     - setuptools
+    -wxPython
+    -vtk
   run:
     - python
     - numpy
@@ -68,6 +72,8 @@ requirements:
     - glew
     - llvm-openmp # [osx]
     - libgomp # [linux64]
+    - wxPython
+    - vtk
 
 test:
   commands:
