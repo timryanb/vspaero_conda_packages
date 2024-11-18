@@ -12,7 +12,7 @@ cmake -DVSP_NO_GRAPHICS=${no_graphics} -DVSP_USE_SYSTEM_LIBXML2=true -DVSP_USE_S
       -DVSP_USE_SYSTEM_GLM=true -DVSP_USE_SYSTEM_GLEW=true \
       -DVSP_USE_SYSTEM_CMINPACK=true -DVSP_USE_SYSTEM_LIBIGES=false -DVSP_USE_SYSTEM_EIGEN=true \
       -DVSP_USE_SYSTEM_CODEELI=false -DVSP_USE_SYSTEM_CPPTEST=false ../Libraries -DCMAKE_BUILD_TYPE=Release
-make -j1
+make -j1 VERBOSE=1
 cd ../build
 cmake ../src/ -DVSP_NO_GRAPHICS=${no_graphics} -DVSP_LIBRARY_PATH=../buildlibs -DCMAKE_BUILD_TYPE=Release
 make -j ${CPU_COUNT}
