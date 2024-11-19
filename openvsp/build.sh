@@ -19,6 +19,7 @@ make -j ${CPU_COUNT}
 make package
 # Install python interface
 pushd _CPack_Packages/${OS}/ZIP/OpenVSP-${PKG_VERSION}-${OS}/python
+sed -i -e 's/wxPython//g' requirements.txt
 ${PYTHON} -m pip install --no-deps --prefix=${PREFIX} -r requirements.txt -vv
 cd ..
 cp -v vspaero vspscript vsploads ${PREFIX}/bin
