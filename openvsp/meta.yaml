@@ -42,6 +42,7 @@ requirements:
     - setuptools
     - wxpython
     - vtk
+    - sed
   host:
     - python {{ python }}
     - pip
