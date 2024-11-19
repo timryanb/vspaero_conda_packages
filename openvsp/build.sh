@@ -21,6 +21,7 @@ make package
 pushd _CPack_Packages/${OS}/ZIP/OpenVSP-${PKG_VERSION}-${OS}/python
 sed -i -e 's/wxPython//g' requirements.txt
 sed -i -e 's/vtk//g' requirements.txt
+rm ./openvsp/openvsp/tests/test_vsp_api.py
 ${PYTHON} -m pip install --no-deps --prefix=${PREFIX} -r requirements.txt -vv
 cd ..
 cp -v vspaero vspscript vsploads ${PREFIX}/bin
