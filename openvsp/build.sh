@@ -25,8 +25,8 @@ rm ./openvsp/openvsp/tests/test_vsp_api.py
 ${PYTHON} -m pip install --no-deps --prefix=${PREFIX} -r requirements.txt -vv
 cd ..
 cp -v vspaero vspscript vsploads ${PREFIX}/bin
-ln -s ${PREFIX}/bin/vspaero ${SP_DIR}/openvsp/
-ln -s ${PREFIX}/bin/vsploads ${SP_DIR}/openvsp/
+#ln -s ${PREFIX}/bin/vspaero ${SP_DIR}/openvsp/
+#ln -s ${PREFIX}/bin/vsploads ${SP_DIR}/openvsp/
 if [[ ${no_graphics} == "false" ]]; then
   cp -v vsp vspviewer ${PREFIX}/bin
   ln -s ${PREFIX}/bin/vspviewer ${SP_DIR}/openvsp/
