@@ -30,7 +30,6 @@ requirements:
     - cmake
     - make
     - compilers ==1.6.0
-    - {{ stdlib("c") }}
     - swig
     - eigen
     - cminpack
